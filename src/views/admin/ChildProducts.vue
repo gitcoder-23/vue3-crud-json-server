@@ -27,7 +27,7 @@
 <script>
 export default {
   name: 'ChildProducts',
-  props: ['listTitle', 'listName', 'allProducts'],
+  props: ['listTitle', 'listName', 'allProducts', 'delProduct'],
 };
 </script>
 

@@ -43,6 +43,7 @@
         listTitle="Hello All Products without v-bind"
         v-bind:listName="listName"
         v-bind:allProducts="allProducts"
+        v-bind:delProduct="delProduct"
       />
     </tbody>
   </table>
