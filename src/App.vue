@@ -4,11 +4,6 @@
     <router-link to="/about">About</router-link>
   </div> -->
   <router-view />
-  <div class="" style="text-align: center">
-    <router-link :to="{ name: 'Products' }" class="btn"
-      >Go To Products</router-link
-    >
-  </div>
 </template>
 
 <style>

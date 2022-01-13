@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(productData, index) in allProducts" :key="productData.id">
+      <!-- <tr v-for="(productData, index) in allProducts" :key="productData.id">
         <td>{{ index + 1 }}</td>
         <td>{{ productData.id }}</td>
         <td>{{ productData.title.substring(0, 45) }}...</td>
@@ -38,7 +38,12 @@
             Delete
           </button>
         </td>
-      </tr>
+      </tr> -->
+      <ChildProducts
+        listTitle="Hello All Products without v-bind"
+        v-bind:listName="listName"
+        v-bind:allProducts="allProducts"
+      />
     </tbody>
   </table>
 </template>
@@ -46,10 +51,15 @@
 <script>
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
+import ChildProducts from './ChildProducts.vue';
 export default {
   name: 'Producs',
+  components: {
+    ChildProducts,
+  },
   setup() {
     const allProducts = ref([]);
+    const listName = 'All Product Datas with v-bind';
 
     const allData = async () => {
       const apiUrl = await axios
@@ -114,7 +124,7 @@ export default {
     // };
     // if use vue 3 to show data inside setup function
     // return all Functions and refs here
-    return { allProducts, delProduct };
+    return { listName, allProducts, delProduct };
   },
 };
 </script>
