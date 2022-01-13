@@ -39,6 +39,8 @@
           </button>
         </td>
       </tr> -->
+      <!-- v-on:changeTitle="newTitleSet($event)" -->
+
       <ChildProducts
         listTitle="Hello All Products without v-bind"
         v-bind:listName="listName"
@@ -92,6 +94,11 @@ export default {
       }
     };
 
+    // child to parent
+    const newTitleSet = (data) => {
+      this.listName = data;
+    };
+
     // inside function
     // onMounted(async () => {
     //   const apiUrl = await axios
@@ -125,7 +132,7 @@ export default {
     // };
     // if use vue 3 to show data inside setup function
     // return all Functions and refs here
-    return { listName, allProducts, delProduct };
+    return { listName, allProducts, delProduct, newTitleSet };
   },
 };
 </script>

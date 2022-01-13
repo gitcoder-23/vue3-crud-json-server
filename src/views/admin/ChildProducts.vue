@@ -21,6 +21,7 @@
       </button>
     </td>
   </tr>
+  <!-- <button @click="('setTitle')">Set Title</button> -->
   <p style="text-align: center">{{ listTitle }} <br /><br />{{ listName }}</p>
 </template>
 
@@ -28,6 +29,14 @@
 export default {
   name: 'ChildProducts',
   props: ['listTitle', 'listName', 'allProducts', 'delProduct'],
+  // setup(props) {
+  //   const setTitle = () => {
+  //     console.log('yes');
+  //     $emit('changeTitle', 'code test data!');
+  //     console.log('yes');
+  //   };
+  //   return { setTitle };
+  // },
 };
 </script>
 
